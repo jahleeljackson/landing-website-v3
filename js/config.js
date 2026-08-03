@@ -1,6 +1,7 @@
 /**
  * Cassian AI — site configuration
- * Edit this file to update pricing, embeds, images, and integrations.
+ * Edit this file for embeds, images, and integrations.
+ * Pricing display strings live in index.html (#price-intro, #price-diagnostic, etc.).
  */
 window.CASSIAN_CONFIG = {
   /** Calendly scheduling URL for the Book a call section and CTA links */
@@ -23,14 +24,11 @@ window.CASSIAN_CONFIG = {
   formWebhookUrl: "",
 
   pricing: {
-    /** Paid workflow diagnostic (USD) */
-    diagnostic: 2500,
-    /** Implementation setup starting price (USD) */
-    implementationFrom: 5000,
-    /** Monthly retainer starting price (USD) */
-    retainerFrom: 1500,
-    diagnosticCreditPolicy:
-      "100% of the diagnostic fee is credited toward implementation if you begin within 30 days of delivery.",
+    /**
+     * Numeric diagnostic amount used only for ROI payback-months math.
+     * Display copy is edited in index.html (#price-diagnostic, #roi-diagnostic-label).
+     */
+    diagnosticForRoi: 1500,
   },
 
   roi: {

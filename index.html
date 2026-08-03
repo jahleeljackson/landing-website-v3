@@ -54,8 +54,7 @@
           </h1>
           <p class="hero-lead">
             We help independent insurance agencies identify their highest-value workflow
-            bottlenecks and deploy proven automation systems—without a large custom software
-            project.
+            bottlenecks and deploy automation systems designed around your existing tools.
           </p>
           <div class="cta-group">
             <a class="btn btn-primary" data-calendly-link href="#book"
@@ -275,13 +274,13 @@
             <span class="section-label">Pricing</span>
             <h2 class="section-title" id="pricing-title">A clear path from fit to launch.</h2>
             <p class="section-lead">
-              <!-- EDIT: pricing amounts are driven by js/config.js -->
               Clear stages from a free intro call through diagnostic, fixed-scope
               implementation, and ongoing optimization. Vendor subscriptions and platform
               fees are billed separately.
             </p>
           </header>
 
+          <!-- EDIT: pricing strings below (also update #roi-diagnostic-label in the ROI section) -->
           <div class="pricing-stages reveal">
             <article class="pricing-stage">
               <span class="pricing-stage-num" aria-hidden="true">01</span>
@@ -295,13 +294,13 @@
             <article class="pricing-stage">
               <span class="pricing-stage-num" aria-hidden="true">02</span>
               <div>
-                <h3>Workflow diagnostic</h3>
+                <h3>Agency Workflow Diagnostic</h3>
                 <p>
                   Stakeholder interviews, opportunity quantification, recommended system, and
-                  implementation proposal.
+                  implementation proposal packaged and presented.
                 </p>
               </div>
-              <p class="pricing-stage-price" id="price-diagnostic">$2,500</p>
+              <p class="pricing-stage-price" id="price-diagnostic">$1,500</p>
             </article>
 
             <article class="pricing-stage">
@@ -312,16 +311,16 @@
                   Fixed-scope configuration, integrations, testing, training, and go-live support.
                 </p>
               </div>
-              <p class="pricing-stage-price" id="price-implementation">from $5,000</p>
+              <p class="pricing-stage-price" id="price-implementation">from $3,000</p>
             </article>
 
             <article class="pricing-stage">
               <span class="pricing-stage-num" aria-hidden="true">04</span>
               <div>
-                <h3>Optimization retainer</h3>
-                <p>Monitoring, refinements, adoption support, and next-system recommendations.</p>
+                <h3>Automation Operations Support</h3>
+                <p>Monthly monitoring, exception handling, workflow improvements, and team support.</p>
               </div>
-              <p class="pricing-stage-price" id="price-retainer">from $1,500/mo</p>
+              <p class="pricing-stage-price" id="price-retainer">from $1,000/mo</p>
             </article>
           </div>
 
@@ -486,7 +485,8 @@
 
               <p class="roi-payback" id="roi-payback">
                 At the expected recovery rate, a
-                <strong id="roi-diagnostic-label">$2,500</strong> diagnostic pays back in about
+                <!-- EDIT: keep this label in sync with #price-diagnostic; payback months use pricing.diagnosticForRoi in js/config.js -->
+                <strong id="roi-diagnostic-label">$750–$1,500</strong> diagnostic pays back in about
                 <strong id="roi-payback-months">1.2</strong> months of recovered capacity.
               </p>
               <p class="roi-disclaimer">

@@ -131,29 +131,6 @@ function initAboutImage() {
   );
 }
 
-function initPricing() {
-  const pricing = getConfig().pricing || {};
-  const diagnostic = Number(pricing.diagnostic) || 0;
-  const implementationFrom = Number(pricing.implementationFrom) || 0;
-  const retainerFrom = Number(pricing.retainerFrom) || 0;
-
-  const diagnosticEl = document.getElementById("price-diagnostic");
-  const implementationEl = document.getElementById("price-implementation");
-  const retainerEl = document.getElementById("price-retainer");
-  const creditEl = document.getElementById("price-credit-policy");
-
-  if (diagnosticEl) diagnosticEl.textContent = formatUsd(diagnostic);
-  if (implementationEl) {
-    implementationEl.textContent = `from ${formatUsd(implementationFrom)}`;
-  }
-  if (retainerEl) {
-    retainerEl.textContent = `from ${formatUsd(retainerFrom)}/mo`;
-  }
-  if (creditEl && pricing.diagnosticCreditPolicy) {
-    creditEl.textContent = pricing.diagnosticCreditPolicy;
-  }
-}
-
 function initFormSuccess() {
   const params = new URLSearchParams(window.location.search);
   if (params.get("success") !== "1") return;
@@ -285,7 +262,9 @@ function initRoiCalculator() {
     });
 
     const paybackEl = document.getElementById("roi-payback-months");
-    const diagnostic = (getConfig().pricing && getConfig().pricing.diagnostic) || 2500;
+    /** Used only for payback months math — display label is edited in index.html */
+    const diagnostic =
+      (getConfig().pricing && Number(getConfig().pricing.diagnosticForRoi)) || 1500;
     if (paybackEl) {
       if (savings.expected > 0) {
         const months = (diagnostic / savings.expected) * 12;
@@ -294,9 +273,6 @@ function initRoiCalculator() {
         paybackEl.textContent = "—";
       }
     }
-
-    const diagnosticLabel = document.getElementById("roi-diagnostic-label");
-    if (diagnosticLabel) diagnosticLabel.textContent = formatUsd(diagnostic);
   }
 
   form.addEventListener("submit", (event) => {
@@ -323,7 +299,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
   initCalendly();
   initAboutImage();
-  initPricing();
   initFormSuccess();
   initContactForm();
   initRoiCalculator();
