@@ -11,7 +11,7 @@ window.CASSIAN_CONFIG = {
    * About portrait path. Drop a file in /images then set this, e.g. "images/about.jpg".
    * Leave empty to show the placeholder.
    */
-  aboutImage: "",
+  aboutImage: "images/about-image2.png",
 
   /** Netlify Forms form name (must match the form name attribute) */
   formName: "contact",
